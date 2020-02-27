@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body {
+  background-color: #363636;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  font-size: 50px;
+}
+
+.cells {
+  width: 150px;
+  height: 150px;
+  transition: opacity 5s;
+}
+#cell-2 {
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+#cell-5 {
+  border: 5px solid white;
+}
+#cell-4 {
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+}
+#cell-6 {
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+}
+#cell-8 {
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+.cells:hover {
+  background-color: rgba(255, 255, 255, 10%);
+  transition: background-color 0.5s;
+}
+
+.cells > span {
+  font-size: 100px;
+  margin-left: 43px;
+}
+
+.spanPlaceHolder {
+  color: rgba(255, 255, 255, 10%);
+}
+
+.red {
+  color: #ff0800;
+  text-shadow: 0 0 5px pink;
+}
+
+.blue {
+  color: #0080ff;
+  text-shadow: 0 0 5px skyblue;
+}
+
+.score {
+  font-size: 150px;
+  font-family: "Press Start 2P";
+}
+
+.scoretitle {
+  font-family: "Press Start 2P";
+}
+
+.tictactoeholder {
+  opacity: 100%;
+
+  transition: opacity 4s;
+}
+
+.fadediv {
+  opacity: 10%;
+
+  transition: opacity 4s;
+}
+
+input:hover {
+  box-shadow: 5px 5px rgba(255, 255, 255, 30%);
+}
+
+h1:hover {
+  text-shadow: 5px 5px rgba(0, 0, 0, 30%);
+}
+
+.instructionsIcon {
+  font-family: "Vast Shadow";
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 25px;
+  padding: 7px 18px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  box-shadow: 4px 4px rgba(0, 0, 0, 30%);
+
+  transition: box-shadow 0.5s;
+  transition: font-size 0.5s;
+}
+.instructionsIcon:hover {
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 7px 7px rgba(0, 0, 0, 50%);
+
+  transition: box-shadow 0.5s;
+  transition: font-size 0.5s;
+}
+
+.resetIcon {
+  font-family: "Vast Shadow";
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 25px;
+  padding: 7px 18px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  box-shadow: 4px 4px rgba(0, 0, 0, 30%);
+
+  transition: box-shadow 0.5s;
+  transition: font-size 0.5s;
+}
+.resetIcon:hover {
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 7px 7px rgba(0, 0, 0, 50%);
+
+  transition: box-shadow 0.5s;
+  transition: font-size 0.5s;
+}
+
+/*Modal*/
+
+.instructionmodal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalshow {
+  display: block;
+}
+
+.modalcontents {
+  background-color: #363636;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.screencover {
+  display: block;
+  position: fixed;
+  z-index: 5;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.closebtn {
+  color: #aaaaaa;
+  text-align: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closebtn:hover,
+.closebtn:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.instructionText {
+  font-size: 19px;
+}
+
+.resetbtn {
+  background-color: #363636;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bolder;
+
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.resetbtn:hover,
+.resetbtn:focus {
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+
+  transition: color 0.5s, background-color 0.5s;
 }
