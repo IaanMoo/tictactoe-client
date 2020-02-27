@@ -9,7 +9,7 @@ import ApolloClient from "apollo-boost";
 import Tictactoe from "./Components/Tictactoe.js";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql"
+  uri: "https://ianetruiste-tictactoe-server.herokuapp.com/graphql"
 });
 
 function App() {
