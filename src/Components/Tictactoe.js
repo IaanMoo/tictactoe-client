@@ -77,6 +77,7 @@ function Tictactoe(props) {
 			playerTurn === "Player 2 Wins"
 		) {
 			alert("Cell is already occupied");
+			setTurnsCount(--turns);
 		} else {
 			if (playerTurn === "Player 1's Turn!") {
 				selectedCell.innerHTML = "X";
@@ -256,7 +257,7 @@ function Tictactoe(props) {
 			</div>
 			<div className="row">
 				<div className="col-md-3">
-					<h2 className="mt-5 text-center">Player 1</h2>
+					<h2 className="mt-5 text-center ptitle">Player 1</h2>
 					<form className="form" onSubmit={chooseCell}>
 						<input
 							type="number"
@@ -363,7 +364,7 @@ function Tictactoe(props) {
 				</div>
 
 				<div className="col-md-3">
-					<h2 className="mt-5 text-center">Player 2</h2>
+					<h2 className="mt-5 text-center ptitle">Player 2</h2>
 					<form className="form" onSubmit={chooseCell}>
 						<input
 							type="number"
