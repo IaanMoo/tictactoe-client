@@ -56,7 +56,7 @@ function Tictactoe(props) {
 		e.classList.remove("screencover");
 		let pTwoInput = document.getElementById("playerTwoInput");
 		pTwoInput.disabled = true;
-		pTwoInput.value = 0;
+		pTwoInput.value = "";
 		document.getElementById("playerOneInput").disabled = false;
 	};
 	const chooseCell = cell => {
@@ -85,7 +85,7 @@ function Tictactoe(props) {
 				setPlayerTurn("Player 2's Turn!");
 				let pOneInput = document.getElementById("playerOneInput");
 				pOneInput.disabled = true;
-				pOneInput.value = 0;
+				pOneInput.value = "";
 				document.getElementById("playerTwoInput").disabled = false;
 			} else {
 				selectedCell.innerHTML = "O";
@@ -94,7 +94,7 @@ function Tictactoe(props) {
 				setPlayerTurn("Player 1's Turn!");
 				let pTwoInput = document.getElementById("playerTwoInput");
 				pTwoInput.disabled = true;
-				pTwoInput.value = 0;
+				pTwoInput.value = "";
 				document.getElementById("playerOneInput").disabled = false;
 			}
 
